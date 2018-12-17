@@ -43,7 +43,6 @@ class SmsHandler(_BaseNoticeRoleHandler):
 
         dayu = DaYuSms.custom_vars(body)
         err = dayu.send()
-        print("error =>", err)
         if err:
             self.fail(**err)
             return
