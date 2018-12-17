@@ -2,21 +2,13 @@
 import json
 import uuid
 
-from tornado.web import HTTPError
-
 from codebase.web import APIRequestHandler
 from codebase.models import Notice
 # from eva.conf import settings
 from codebase.utils.dayu import DaYuSms
 
 
-class _BaseNoticeRoleHandler(APIRequestHandler):
-
-    def get_uid(self):
-        uid = self.request.headers.get("X-User-Id")
-        if not uid:
-            raise HTTPError(403, reason="no-x-user-id")
-        return uid
+class _BaseNoticeHandler(APIRequestHandler):
 
     def validate_data(self):
         body = self.get_body_json()
@@ -30,7 +22,7 @@ class _BaseNoticeRoleHandler(APIRequestHandler):
         return True
 
 
-class SmsHandler(_BaseNoticeRoleHandler):
+class SmsHandler(_BaseNoticeHandler):
 
     def post(self):
         """发送手机验证码
@@ -52,7 +44,7 @@ class SmsHandler(_BaseNoticeRoleHandler):
             sign_name=body["sign_name"],
             template_code=body["template_code"],
             template_param=json.dumps(body["template_param"]),
-            uid=self.get_uid(),
+            uid=self.current_user.uuid,
             type="sms"
         )
         self.db.add(notice)

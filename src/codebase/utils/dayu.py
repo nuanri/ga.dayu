@@ -53,9 +53,11 @@ class DaYuSms:
         acs_client = self.client()
         sms_response = acs_client.do_action_with_exception(sms_request)
         res = json.loads(sms_response)
-        print("smsResponse = ", res)
-        err = {"data": {}}
+        print("sms_response = ", res)
+        err = {}
         if res.get("Code") != 'OK':
-            err["data"]["message"] = res.get("Message")
-            err["data"]["code"] = res.get("Code")
+            d = {}
+            d["message"] = res.get("Message")
+            d["data"]["code"] = res.get("Code")
+            err.update(d)
         return err
