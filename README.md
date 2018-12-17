@@ -1,31 +1,10 @@
-# tornado.boot
-
-[![Build Status](https://travis-ci.com/ooclab/tornado.boot.svg?branch=master)](https://travis-ci.com/ooclab/tornado.boot)
-[![codecov](https://codecov.io/gh/ooclab/tornado.boot/branch/master/graph/badge.svg)](https://codecov.io/gh/ooclab/tornado.boot)
-
-Start a service-oriented project rapidly
-
+# ga.dayu
 
 ## 简介
 
-`tornado.boot` 项目创建一个快速启动（微）服务开发的模版。
-
-使用如下技术堆栈 [Dependency graph](https://github.com/ooclab/authz/network/dependencies) ：
-
-- [pyeva](https://github.com/ooclab/eva)
-- [tornado](https://github.com/tornadoweb/tornado)
-- [sqlalchemy](https://github.com/zzzeek/sqlalchemy)
-
+`ga.dayu` 基于阿里云的短信服务
 
 ## 使用
-
-### 创建项目副本
-
-```
-git clone https://github.com/ooclab/tornado.boot.git YOUR_PROJECT_NAME
-cd YOUR_PROJECT_NAME
-git remote set-url origin YOUR_GIT_REPO_ACCESS
-```
 
 ### 开发
 
@@ -56,33 +35,3 @@ docker-compose exec api bash
 ```
 
 进入容器内部，操作同上
-
-### 运行测试用例
-
-```
-nose2 -v --with-coverage
-```
-
-### 运行代码风格检查
-
-```
-pylint src tests
-flake8
-```
-
-### 代码覆盖率
-
-运行测试，并生成覆盖率测试：
-
-```
-nose2 -v --with-coverage
-```
-
-![](./docs/attachments/nose2-coverage-report.jpg)
-
-生成 html 报告，使用浏览器查看：
-
-```
-nose2 -v --with-coverage --coverage-report html
-open htmlcov/index.html
-```
