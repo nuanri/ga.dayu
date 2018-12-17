@@ -10,4 +10,5 @@ pylint==2.1.1
 coverage==4.5.1
 requests
 codecov
+aliyun-python-sdk-core-v3==2.11.0
 git+https://gitlab.com/pycqa/flake8#egg=flake8

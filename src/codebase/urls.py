@@ -2,7 +2,7 @@ from tornado.web import url
 
 from codebase.controllers import (
     default,
-    role
+    notice
 )
 
 
@@ -13,12 +13,8 @@ HANDLERS = [
     url(r"/_health",
         default.HealthHandler),
 
-    # Role
+    # notice
 
-    url(r"/role",
-        role.RoleHandler),
-
-    url(r"/role/"
-        r"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})",
-        role.SingleRoleHandler),
+    url(r"/sms",
+        notice.SmsHandler),
 ]

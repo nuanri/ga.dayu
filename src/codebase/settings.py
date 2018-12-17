@@ -10,3 +10,11 @@ PAGE_SIZE = 10
 
 # 可以自定义任何变量
 ADMIN_ROLE_NAME = "admin"
+
+# 阿里云短信
+ACCESS_KEY_ID = ""
+ACCESS_KEY_SECRET = ""
+
+REGION = "cn-hangzhou"
+PRODUCT_NAME = "Dysmsapi"
+DOMAIN = "dysmsapi.aliyuncs.com"
