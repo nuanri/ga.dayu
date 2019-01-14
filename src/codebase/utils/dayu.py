@@ -3,7 +3,7 @@
 import json
 from eva.conf import settings
 
-from codebase.lib.dysms.aliyunsdkdysmsapi.request.v20170525 import SendSmsRequest
+from codebase.vendor.dysms.aliyunsdkdysmsapi.request.v20170525 import SendSmsRequest
 # from aliyunsdkdysmsapi.request.v20170525 import QuerySendDetailsRequest
 from aliyunsdkcore.client import AcsClient
 # import uuid
