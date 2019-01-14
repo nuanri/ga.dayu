@@ -1,16 +1,12 @@
 # pylint: disable=R0201
 
 import json
+
 from eva.conf import settings
+from aliyunsdkcore.client import AcsClient
+from aliyunsdkcore.profile import region_provider
 
 from codebase.vendor.dysms.aliyunsdkdysmsapi.request.v20170525 import SendSmsRequest
-# from aliyunsdkdysmsapi.request.v20170525 import QuerySendDetailsRequest
-from aliyunsdkcore.client import AcsClient
-# import uuid
-from aliyunsdkcore.profile import region_provider
-# from aliyunsdkcore.http import method_type as MT
-# from aliyunsdkcore.http import format_type as FT
-# import const
 
 
 class DaYuSms:
