@@ -1,6 +1,6 @@
 # pylint: disable=R0201
-
 import json
+import logging
 
 from eva.conf import settings
 from aliyunsdkcore.client import AcsClient
@@ -49,11 +49,15 @@ class DaYuSms:
         acs_client = self.client()
         sms_response = acs_client.do_action_with_exception(sms_request)
         res = json.loads(sms_response)
-        print("sms_response = ", res)
+        # print("sms_response = ", res)
+        logging.info(res)
         err = {}
         if res.get("Code") != 'OK':
-            d = {}
+            d = {"data": {}}
             d["message"] = res.get("Message")
             d["data"]["code"] = res.get("Code")
+            # d["data"] = {
+            #     "code": res.get("Code")
+            # }
             err.update(d)
         return err
